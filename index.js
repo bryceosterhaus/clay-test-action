@@ -17,22 +17,26 @@ async function run() {
 
 		const context = github.context;
 
+		const [owner, repo] = context.repository.split('/')
+
 		const octokit = new github.GitHub(github_token);
 
-		octokit.pulls.list(context).then(
+		octokit.pulls.list({owner, repo}).then(
 			prs => {
 				prs.data.forEach(pr => {
 					if (
 						!pr.labels.find(label => label.name === 'Build Stats Finished')
 					) {
 						octokit.issues.createComment({
-							...context,
+							owner,
+							repo,
 							body: 'test',
 							issue_number: pr.number,
 						});
 		
 						octokit.issues.addLabels({
-							...context,
+							owner,
+							repo,
 							issue_number: pr.number,
 							labels: 'Build Stats Finished',
 						});
