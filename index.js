@@ -3,11 +3,6 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-/**
- * SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
- * SPDX-License-Identifier: BSD-3-Clause
- */
-
 const core = require('@actions/core');
 const github = require('@actions/github');
 
