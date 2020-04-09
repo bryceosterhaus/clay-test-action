@@ -31,6 +31,8 @@ async function run() {
 							issue_number: pr.number,
 						});
 		
+
+		
 						octokit.issues.addLabels({
 							...context.repo,
 							issue_number: pr.number,
