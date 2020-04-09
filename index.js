@@ -27,6 +27,8 @@ async function run() {
 
 		const octokit = new github.GitHub(github_token);
 
+		console.log(octokit.pulls.list())
+
 		octokit.pulls.list().forEach(pr => {
 			if (
 				!pr.labels.find(label => label.name === 'Build Stats Finished')
