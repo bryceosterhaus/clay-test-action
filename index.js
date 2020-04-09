@@ -29,7 +29,7 @@ async function run() {
 
 		console.log(octokit.pulls.list())
 
-		octokit.pulls.list().forEach(pr => {
+		octokit.pulls.list(context.repo).forEach(pr => {
 			if (
 				!pr.labels.find(label => label.name === 'Build Stats Finished')
 			) {
