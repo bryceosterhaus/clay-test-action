@@ -33,11 +33,11 @@ async function run() {
 		
 
 
-		
+
 						octokit.issues.addLabels({
 							...context.repo,
 							issue_number: pr.number,
-							labels: 'Build Stats Finished',
+							labels: ['Build Stats Finished'],
 						});
 					}
 				})
