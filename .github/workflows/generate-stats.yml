@@ -4,8 +4,11 @@ jobs:
   generate-stats:
     runs-on: ubuntu-latest
     steps:
+      - shell: bash
+        run: |
+          expr 3 + 7 > math-homework.txt
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
             name: build-stats
-            path: index.js
+            path: math-homework.txt
