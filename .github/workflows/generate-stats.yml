@@ -1,0 +1,10 @@
+on: ['pull_request']
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Upload artifact
+    uses: actions/upload-artifact@v1.0.0
+    with:
+      name: build-stats
+      path: index.js
