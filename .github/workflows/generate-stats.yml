@@ -6,9 +6,9 @@ jobs:
     steps:
       - shell: bash
         run: |
-          expr 3 + 7 > math-homework.txt
+          ${{ github.run_id }} > ${{ github.run_id }}.txt
       - name: Upload artifact
         uses: actions/upload-artifact@v1.0.0
         with:
             name: build-stats
-            path: math-homework.txt
+            path: ${{ github.run_id }}.txt
